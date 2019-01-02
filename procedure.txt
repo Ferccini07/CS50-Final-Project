@@ -1,0 +1,22 @@
+//Vezano za Movie app - Traversy it
+1. Installing Apios
+	https://www.npmjs.com/package/axios
+2. https://www.omdbapi.com/
+	API
+3. install node.js
+	nodejs
+	nodejs supports Windows officially. Just download it at http://nodejs.org and run the installer.
+	from Nodejs.x86 startmenu, click nodejs command prompt
+	try commands
+    		node -v
+    		npm -v
+
+4. install live-server
+	npm install -g live-server
+5. Getting user interface and bootstrep theme from: https://bootswatch.com/
+	click download and grab a link from url
+6. Getting jquery 3x minified from https://code.jquery.com/
+7. getting axios clinet (search axios npm) https://www.npmjs.com/package/axios
+
+
+//Vezano za virutalenv i cijeli taj setup oko poèetka

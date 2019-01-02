@@ -1,8 +1,10 @@
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
+@app.route('/index.html')
 def index():
     return render_template('index.html')
 
@@ -10,7 +12,6 @@ def index():
 @app.route('/movie.html')
 def movie():
     return render_template('movie.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)

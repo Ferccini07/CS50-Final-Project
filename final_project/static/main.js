@@ -42,7 +42,7 @@ function movieSelected(id){
     // saves id
     sessionStorage.setItem('movieId', id);
     // changing the page to movie.html
-    window.location = 'movie.html';
+    window.location = 'movie';
     return false;
 }
 
@@ -81,6 +81,8 @@ function getMovie(){
                 </div>
             </div>
         `
+
+        //this line inserts 'output' inside a html tag whos id='movie'
         $('#movie').html(output);
         
     })

@@ -16,7 +16,42 @@
 5. Getting user interface and bootstrep theme from: https://bootswatch.com/
 	click download and grab a link from url
 6. Getting jquery 3x minified from https://code.jquery.com/
-7. getting axios clinet (search axios npm) https://www.npmjs.com/package/axios
+7. getting axios client (search axios npm) https://www.npmjs.com/package/axios
 
 
-//Vezano za virutalenv i cijeli taj setup oko poèetka
+8.//Installing and creating virtual envitonment for python and those first setups
+In snippets.
+
+
+9.//Instaling Flask and creating first app setups
+10.//Making git repository (git needs to be installed)
+	-creating master branch
+	-creating (pythJS) branch which was later deleted
+	-merging pythJS branch
+
+
+11.//Adding bootstrap from (both JS and CSS)
+https://getbootstrap.com/docs/4.2/getting-started/introduction/
+-implementing and organizing static folder and JS and CSS linkage with url_for()
+
+12. installing flask-wtf for forms (validation etc)
+	pip install flask-wtf
+	create forms.py
+13. generating secret key
+	-to start Python in git bash, type python -i
+14. Creating login forms and registration forms in app.py and
+	linking them to html pages
+	adding validation
+15.//Instaaling sql alchemy with pip
+	pip install flask-sqlalchemy
+	//There is a regular sqlalchemy but flask-sqlalchemy
+	// is flask extension and is better for flask application
+16. Setting up db and columns
+17. Creating db in python (snippets)
+	creates file site.db
+18. Changing and reorganizing everything to be Package Structure for easier
+	code maintenence and better structure
+	running now with python run.py
+19. User autenthication and encrypting
+	pip install flask-bcrypt
+	adding Bcrypt module in __init__.py

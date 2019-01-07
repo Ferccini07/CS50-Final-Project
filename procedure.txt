@@ -55,3 +55,15 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 19. User autenthication and encrypting
 	pip install flask-bcrypt
 	adding Bcrypt module in __init__.py
+	adding email and username validation to registration form
+	installing
+
+	Login with extention flask-login
+	pip install flask-login
+
+	creating user loader in models.py
+
+	redirecting user in register and login function if user is authenticated to home route
+
+	creating account.html page which is only accessible if user is loged 	in (login_required function)
+

@@ -66,4 +66,10 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 	redirecting user in register and login function if user is authenticated to home route
 
 	creating account.html page which is only accessible if user is loged 	in (login_required function)
+19.User Account and Profile Picture
+// Adding update accont form in  both account.html and in routes
+// saving pictures from local system to app
+//reducing img size of pics
+	Installing Pillow
+	pip install Pillow
 

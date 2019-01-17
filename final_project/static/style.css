@@ -4,8 +4,12 @@
 
 .container{
     padding-top: 5px;
+    margin-top: 2em;
 }
 
+html body section#footer {
+    margin-top: 4em;
+}
 
 @media(min-width:960px){
     #movies .col-md-3 .well {
@@ -13,6 +17,6 @@
     }
 
     #movies .col-md-3 img{
-        height: 240px;
+        height: 245px;
     }
 }

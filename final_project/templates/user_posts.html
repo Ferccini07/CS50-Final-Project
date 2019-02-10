@@ -2,6 +2,7 @@
 
 
 {% block content %}
+    <h1 class="justify-content-center content-section col-md-8 pl-5 mt-3">Comments by {{ user.username }} ({{ posts.total }}) </h1>
     {% for post in posts.items %}
         <div class="row justify-content-center content-section col-md-8 pl-5 mt-3"> 
             <div class="content-section jumbotron col-md-8 pl-5">
@@ -24,9 +25,9 @@
                 {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                     {% if page_num %}
                         {% if posts.page == page_num %}
-                            <a class="btn btn-info md-4 mt-3" href="{{ url_for('commentary', page=page_num) }}">{{ page_num }}</a>
+                            <a class="btn btn-info md-4 mt-3" href="{{ url_for('user_posts', username=user.username, page=page_num) }}">{{ page_num }}</a>
                         {% else %}
-                            <a class="btn btn-outline-info md-4 mt-3" href="{{ url_for('commentary', page=page_num) }}">{{ page_num }}</a>
+                            <a class="btn btn-outline-info md-4 mt-3" href="{{ url_for('user_posts', username=user.username, page=page_num) }}">{{ page_num }}</a>
                         {% endif %}    
                     {% else %}
                         ...

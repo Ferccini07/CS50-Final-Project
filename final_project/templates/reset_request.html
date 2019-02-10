@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+    
+{% block content %}   
+<div class="content-section jumbotron ml-4 col-md-6 pl-5 mt-4">
+    <form method="POST" action="">
+        <!-- hidden_tag is adding CSRF token; it protects from certain attacks -->
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Reset Password</legend>
+        
+            <div class="form-group">
+                <!-- We can add classess to Jinja like this -->
+                {{ form.email.label(class="form-control-label") }}
+                <!-- If form has errors -->
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }} </span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                <!-- If form is correct -->
+                    {{ form.email(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

@@ -5,6 +5,11 @@ $(document).ready(() => {
         event.preventDefault();
     })
 
+    // $('.nav.navbar div.navbar ul.navbar-nav li.nav-item a.nav-link').on( 'click', function () {
+    //     $( '.nav.navbar div.navbar ul.navbar-nav a.nav-link' ).find( 'a.active' ).removeClass( 'active' );
+    //     $( this ).parent( 'a' ).addClass( 'active' );
+    // });
+
 });
 
 
@@ -77,7 +82,7 @@ function getMovie(){
                     ${movie.Plot}
                     <hr>
                     <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
-                    <a href="http://127.0.0.1:5000/post/new" target="_blank" class="btn btn-primary">Comment</a>
+                    <a href="http://127.0.0.1:5000/post/new" class="btn btn-primary">Comment</a>
                     <a href="index.html" class="btn btn-default">Go Back to Search</a>
                 </div>
             </div>

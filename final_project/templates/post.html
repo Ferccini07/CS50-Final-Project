@@ -2,22 +2,24 @@
 
 
 {% block content %}
-<div class="content-section col-md-6 pl-5 mt-4"> 
-    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
-    <div class="media-body">
-        <div class="article-metadata">
-        <a class="mr-2" href="#">{{ post.author.username }}</a>
-        <small class="text-muted">{{ post.date_posted.strftime('%d.%m.%Y') }}</small>
-        <!-- Only is user is author of post can delete -->
-        {% if post.author == current_user %}
-            <div>
-                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
-                <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+<div class="content-section col-md-10 pl-5 mt-4"> 
+    <div class="jumbotron content-section col-md-8 pl-5 mt-3 ml-3">
+        <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+        <div class="media-body">
+            <div class="article-metadata">
+            <a class="mr-2" href="{{ url_for('user_posts', username=post.author.username )}}">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.date_posted.strftime('%d.%m.%Y') }}</small>
+            <!-- Only is user is author of post can delete -->
+            {% if post.author == current_user %}
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+                    <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                </div>
+            {% endif %}
             </div>
-        {% endif %}
+            <h2 class="article-title">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
         </div>
-        <h2 class="article-title">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content }}</p>
     </div>
 </div>
 <!-- Modal -->
@@ -31,7 +33,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                If you delete this comment other user will not be able to see it anymore.
+                Are you sure you want to delet this comment?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

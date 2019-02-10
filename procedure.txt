@@ -15,30 +15,30 @@
 	npm install -g live-server
 5. Getting user interface and bootstrep theme from: https://bootswatch.com/
 	click download and grab a link from url
-6. Getting jquery 3x minified from https://code.jquery.com/
+6. Getting jquery 3x minified from q
 7. getting axios client (search axios npm) https://www.npmjs.com/package/axios
 
 
 8.//Installing and creating virtual envitonment for python and those first setups
-In snippets.
+Images in snippets folder.
 
 
 9.//Instaling Flask and creating first app setups
 10.//Making git repository (git needs to be installed)
 	-creating master branch
-	-creating (pythJS) branch which was later deleted
-	-merging pythJS branch
 
 
 11.//Adding bootstrap from (both JS and CSS)
 https://getbootstrap.com/docs/4.2/getting-started/introduction/
 -implementing and organizing static folder and JS and CSS linkage with url_for()
 
-12. installing flask-wtf for forms (validation etc)
+12. installing flask-wtf for forms (validation of forms)
 	pip install flask-wtf
 	create forms.py
 13. generating secret key
 	-to start Python in git bash, type python -i
+	import secrets
+	secrets.token_hex(16)
 14. Creating login forms and registration forms in app.py and
 	linking them to html pages
 	adding validation
@@ -47,7 +47,7 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 	//There is a regular sqlalchemy but flask-sqlalchemy
 	// is flask extension and is better for flask application
 16. Setting up db and columns
-17. Creating db in python (snippets)
+17. Creating db in python (look in snippets)
 	creates file site.db
 18. Changing and reorganizing everything to be Package Structure for easier
 	code maintenence and better structure
@@ -72,4 +72,56 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 //reducing img size of pics
 	Installing Pillow
 	pip install Pillow
+20. Style of application fixed, bugs removed, some templates changed (commentary added) Comment button in movie.html added and other stuff fixed.
+	//git add .
+	//git commit -m "similar to above"
+21. added pagination and stlye fixed..jumbotron added on posts and account etc
+added template with only a specific user's posts
+
+22. Email and Password Reset
+importing Serializer for creating token for email reset
+creating email reset routes and logic
+
+pip install flask-mail (for function that is sending mail after reseting password)
+
+Making Environment variabels for Flask-mail configuration:
+	USER and PASSWORD - for this you have to specify an email account 
+	on which you will be getting reset message
+	app.config['MAIL_USERNAME'] = os.environ.get('USER')
+	app.config['MAIL_PASSWORD'] = os.environ.get('PASSWORD')
+
+23. Creating custom error pages:
+
+
+Running application:
+1. Open command window/git bash or similar in directory where run.py file is
+2. Type python run.py
+
+Testing database:
+1. Open Python shell
+2. from final_project import db
+3. db.drop_all() 
+4. db.create_all()
+5. from final_project.models import User
+	-create Users:
+	user_1 = User(username='admin', email='admin@fp.com', password='cs50')
+	user_2 = User(username='guest', email='guest@fp.com', password='cs50')
+6. db.session.add(user_1)
+7. db.session.add(user_2)
+8. db.session.commit()
+9. User.query.all()
+
+Sources:
+https://flask-bcrypt.readthedocs.io/en/latest/
+http://flask.pocoo.org/docs/1.0/quickstart/
+http://flask-sqlalchemy.pocoo.org/2.3/quickstart/
+https://flask-login.readthedocs.io/en/latest/
+https://pythonhosted.org/Flask-Mail/
+http://flag-icon-css.lip.is/
+https://getbootstrap.com/
+https://fontawesome.com/
+https://www.youtube.com/user/schafer5
+https://www.youtube.com/user/TechGuyWeb
+https://pythonhosted.org/itsdangerous/
+
 

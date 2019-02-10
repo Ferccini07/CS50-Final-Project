@@ -11,6 +11,15 @@ html body section#footer {
     margin-top: 4em;
 }
 
+.flag{
+    width: 40px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 40%;
+}
+
+
 @media(min-width:960px){
     #movies .col-md-3 .well {
         height: 380px;

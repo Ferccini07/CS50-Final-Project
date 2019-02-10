@@ -20,7 +20,7 @@
 
 
 8.//Installing and creating virtual envitonment for python and those first setups
-Images in snippets folder.
+(Look in snippets folder)
 
 
 9.//Instaling Flask and creating first app setups
@@ -35,23 +35,30 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 12. installing flask-wtf for forms (validation of forms)
 	pip install flask-wtf
 	create forms.py
+
 13. generating secret key
 	-to start Python in git bash, type python -i
 	import secrets
 	secrets.token_hex(16)
+
 14. Creating login forms and registration forms in app.py and
 	linking them to html pages
 	adding validation
+
 15.//Instaaling sql alchemy with pip
 	pip install flask-sqlalchemy
 	//There is a regular sqlalchemy but flask-sqlalchemy
 	// is flask extension and is better for flask application
+
 16. Setting up db and columns
+
 17. Creating db in python (look in snippets)
 	creates file site.db
+
 18. Changing and reorganizing everything to be Package Structure for easier
 	code maintenence and better structure
 	running now with python run.py
+
 19. User autenthication and encrypting
 	pip install flask-bcrypt
 	adding Bcrypt module in __init__.py
@@ -66,6 +73,7 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 	redirecting user in register and login function if user is authenticated to home route
 
 	creating account.html page which is only accessible if user is loged 	in (login_required function)
+
 19.User Account and Profile Picture
 // Adding update accont form in  both account.html and in routes
 // saving pictures from local system to app
@@ -75,6 +83,7 @@ https://getbootstrap.com/docs/4.2/getting-started/introduction/
 20. Style of application fixed, bugs removed, some templates changed (commentary added) Comment button in movie.html added and other stuff fixed.
 	//git add .
 	//git commit -m "similar to above"
+
 21. added pagination and stlye fixed..jumbotron added on posts and account etc
 added template with only a specific user's posts
 
@@ -82,15 +91,21 @@ added template with only a specific user's posts
 importing Serializer for creating token for email reset
 creating email reset routes and logic
 
-pip install flask-mail (for function that is sending mail after reseting password)
+	pip install flask-mail (for function that is sending mail after reseting password)
 
-Making Environment variabels for Flask-mail configuration:
-	USER and PASSWORD - for this you have to specify an email account 
-	on which you will be getting reset message
-	app.config['MAIL_USERNAME'] = os.environ.get('USER')
-	app.config['MAIL_PASSWORD'] = os.environ.get('PASSWORD')
+	Making Environment variabels for Flask-mail configuration:
+		USER and PASSWORD - for this you have to specify an email account 
+		on which you will be getting reset message
+		app.config['MAIL_USERNAME'] = os.environ.get('USER')
+		app.config['MAIL_PASSWORD'] = os.environ.get('PASSWORD')
 
-23. Creating custom error pages:
+23. Creating custom error pages
+
+24. Creating requirements.txt file (displays all moduels used for this app via 'final_project' virtual environment)
+	pip freeze --local > requirements.txt
+
+
+
 
 
 Running application:

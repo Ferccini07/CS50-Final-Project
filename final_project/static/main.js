@@ -1,7 +1,12 @@
 $(document).ready(() => {
+    // When submit is 'hit', its gonna get a callbeack function getMovies
     $('#searchForm').on('submit', (event) => {
+
+        // The text user writes in the search box, saved in a variable 'searchText'
         let searchText = ($('#searchText').val());
+        // 'searchText' passed in 'getMovies' function
         getMovies(searchText);
+        // Its gonna stop the form from submiting to a file
         event.preventDefault();
     })
 
@@ -15,18 +20,27 @@ $(document).ready(() => {
 
 
 function getMovies(searchText){
+    // request to the API
     axios.get('http://www.omdbapi.com/?s='+ searchText +'&apikey=4336f4f8&r=json')
+    // This is gonna return a promise with .then
     .then((response) => {
         console.log(response);
+        // this is the reponse that will be shown in the webpage
+        // list of all the movies related to the query.
+        // 'reponse' is the general response of the query requested to the API
+        // 'data' is part of the 'response' and 'Search' is the part of 'data'
         let movies = response.data.Search;
         let output = '';
-        //this is a loop that loops through all the movies included by search keyword 'searchText'
+        // this is a loop that loops through all the movies included by search keyword 'searchText'
+        // 'each' is a JQuery loop
+        // for each 'movie'(data retrieved) in the 'movies', output a movie via the html defined
         $.each(movies, (index, movie) => {
             output += `
                 <div class="col-md-3">
                     <div class="well text-center">
                         <img src="${movie.Poster}">
                         <h5>${movie.Title}</h5>
+                        <p>Year: ${movie.Year}<p>
                         <a onclick="movieSelected('${movie.imdbID}')" 
                         class="btn btn-primary" href="#">More</a>
                     </div>
@@ -36,6 +50,7 @@ function getMovies(searchText){
         
         $('#movies').html(output);
     })
+    // catch for errors if there are
     .catch((err) => {
         console.log(err);
     });

@@ -17,7 +17,9 @@ def commentary():
     
     # function that returns posts from 'posts.jsom'
     # user can modify 'posts.json' file or remove this function altogather
-    for_Json.json_to_post()
+    
+    # Uncomment if you want to add 'more of the same posts'
+    # for_Json.json_to_post()
         
     # Getting the page user wants
     # 1 is an optional parameter (default page = 1); 
@@ -126,7 +128,7 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
 
-    image_file =  url_for('static', filename='profile_pics/' + current_user.image_file)
+    image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     title = 'Account'
     return render_template('account.html', title=title, 
                             current_user=current_user, image_file=image_file, form=form)

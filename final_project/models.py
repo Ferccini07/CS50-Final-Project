@@ -25,6 +25,7 @@ class User(db.Model, UserMixin):
     
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
+        # dumps creates a JSON Web Signature
         return s.dumps({'user_id': self.id}).decode('utf-8')
 
     @staticmethod
@@ -32,6 +33,7 @@ class User(db.Model, UserMixin):
     def verify_reset_token(token):
         s = Serializer(app.config['SECRET_KEY'])
         try:
+            # loads - Reverse of dumps(), raises BadSignature if the signature validation fails
             user_id = s.loads(token)['user_id']
         except:
             return None

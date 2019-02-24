@@ -110,6 +110,9 @@ creating email reset routes and logic
 
 24. Creating requirements.txt file (displays all moduels used for this app via 'final_project' virtual environment)
 	pip freeze --local > requirements.txt
+25. Installing requirements.txt file
+	pip install -r requirements.txt
+
 
 
 
